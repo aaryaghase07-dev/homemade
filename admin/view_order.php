@@ -46,7 +46,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
             <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
                         
-                        <span><class="dark-logo" style="font-style:italic">Homemade🌿</span></style>
+                        <img src="../images/logo/HomeMadeWithCare.png" alt="HomeMadeWithCare Logo" style="height: 45px;">
                     </a>
                 </div>
                 <div class="navbar-collapse">
