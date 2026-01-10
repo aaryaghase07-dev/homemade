@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Give+You+Glory);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Give+You+Glory|Roboto:300,400,500,700);
 
 
 
@@ -136,7 +136,7 @@ hr {
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-indicator {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 8 8"%3E%3Cpath fill="%23fff" d="M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z"/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 8 8%22%3E%3Cpath fill=%22%23fff%22 d=%22M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z%22/%3E%3C/svg%3E")
 }
 
 .custom-control-input:active~.custom-control-indicator {
@@ -150,7 +150,7 @@ hr {
 }
 
 .custom-control-input:disabled~.custom-control-description {
-    color: #76767
+    color: #767676
 }
 
 .custom-control {
@@ -199,7 +199,7 @@ hr {
 .theme-btn-dash {
     border: 2px dashed #e2c107;
     background-color: transparent;
-    color:white;
+    color: #333;
 }
 
 .theme-btn-dash:hover,
@@ -214,6 +214,24 @@ hr {
 .theme-btn-dash:hover {
     border: 2px solid #e7ae04;
     color: #fff
+}
+
+.signup-btn {
+    background-color: #E67E22;
+    border-color: #E67E22;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all .3s;
+}
+
+.signup-btn:hover,
+.signup-btn:focus,
+.signup-btn:active {
+    background-color: #d35400;
+    border-color: #d35400;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* .bg-white {
@@ -235,7 +253,7 @@ hr {
 }
 
 .space-sm {
-    padding-bottom: 30;
+    padding-bottom: 30px;
     padding-top: 30px
 }
 
@@ -269,19 +287,19 @@ hr {
 }
 
 .b-l {
-    border-left: 1px solid #edeed
+    border-left: 1px solid #edeedd;
 }
 
 .b-r {
-    border-left: 1px solid #edeed
+    border-right: 1px solid #edeedd;
 }
 
 .b-t {
-    border-top: 1px solid #edeed
+    border-top: 1px solid #edeedd;
 }
 
 .b-b {
-    border-bottom: 1px solid #edeed
+    border-bottom: 1px solid #edeedd;
 }
 
 .b-b-0 {
@@ -338,10 +356,7 @@ hr {
     border-color: #f30;
 }
 .popular{
-    background-color:#F5E6CC;
-}
-.featured-restaurants{
-    background-color: #F5E6CC;
+    background-color:#f5e6cc57;
 }
 .featured-restaurants.selected{
     font-weight: 700;
@@ -520,15 +535,27 @@ hr {
 /* HERO TEXT FIX */
 .hero-text h1 {
     color: #ffffff;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 48px;
-    font-weight: bold;
+    font-weight: normal;
     padding-top: 50px;
 
 }
 
+.hero-text h2 {
+    color: #000000;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
 .hero-text h4 {
     color: #ffffff;
+    font-family: 'Roboto', sans-serif;
     font-style: italic;
     font-size: 24px;
     font-weight: bold;
@@ -641,11 +668,11 @@ hr {
     margin: 0 auto 15px;
 }
 
-/* .step-item h4 {
-    font-family: "Give You Glory", cursive;
-    color:rgb(143, 86, 12);
+.step-item h4 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
     font-size: 21px;
-} */
+}
 
 /* .step-item h4 span {
     color: #E67E22;
@@ -719,11 +746,10 @@ hr {
 }
 
 .food-item-wrap {
-    border: 1px solid #eaebeb;
     border-radius: 2px;
     overflow: hidden;
     margin-bottom: 30px;
-    background:#c0710a;
+    background: white;
 }
 
 .food-item-wrap h5 a {
@@ -829,7 +855,6 @@ hr {
 .food-item-wrap .figure-wrap {
     position: relative;
     height: 210px;
-    border:20px solid #c0710a;
     border-radius: 16px;
     overflow: hidden;
     background-color: #fff;
@@ -1040,7 +1065,6 @@ hr {
 button.close {
     padding: 0;
     cursor: pointer;
-    background:#fff;
     border: 0;
     right: -15px;
     position: absolute;
@@ -1216,13 +1240,15 @@ Steps
 /****** featured restaurants block *******/
 
 .restaurants-page{
-    background-color: #F5E6CC;
+    background-color: #ffe9f8;
 }
 
 
 .featured-restaurants {
     padding: 100px 0 20px;
     position: relative;
+    background-color: #ffffff;
+    height: 80vh;
 }
 
 @media (min-width: 280px) and (max-width: 580px) {
@@ -1247,13 +1273,16 @@ Steps
 }
 
 .featured-restaurants .restaurant-wrap {
-    
     border: 1px solid rgb(52, 31, 4);
     border-radius: 3px;
     padding: 15px;
-    background:rgb(153, 119, 76);
-    float: left;
-    width: 100%; 
+    background: #000000;
+    color: #ffffff;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .featured-restaurants .restaurant-logo {
@@ -1261,14 +1290,18 @@ Steps
 }
 
 .featured-restaurants .restaurant-logo img {
-    width: 95px;
-    height: auto;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
     border: 1px solid #eaebeb;
+    border-radius: 3px;
 }
 
 
     .featured-restaurants .restaurant-logo img {
-        width: 85px;
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
         margin-bottom: 15px;
     }
 
@@ -1279,7 +1312,7 @@ Steps
 }
 
 .featured-restaurants .restaurant-wrap h5 a {
-    color: #25282b;
+    color: #ffffff;
 }
 
 .featured-restaurants .bottom-part {
@@ -1291,6 +1324,7 @@ Steps
 .featured-restaurants .ratings {
     font-size: 12px;
     display: inline-block;
+    color: #ffffff;
 }
 
 .featured-restaurants .cost,
@@ -1309,15 +1343,32 @@ Steps
     padding: 0 .5rem;
 }
 
-.featured-restaurants .restaurants-filter ul li a {
-    font-weight: 400;
-    color: #414551;
-    font-size: 16px;
-    text-transform: capitalize;
+.featured-restaurants .restaurants-filter {
+    background-color: #333333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
-.featured-restaurants .restaurants-filter ul li a:hover {
-    color: #E67E22;
+.featured-restaurants .restaurants-filter ul {
+    margin: 0;
+    padding: 0;
+}
+
+.featured-restaurants .restaurants-filter ul li a {
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 5px 12px;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.featured-restaurants .restaurants-filter ul li a:hover,
+.featured-restaurants .restaurants-filter ul li a.selected {
+    color: #ffffff;
+    background-color: #E67E22;
 }
 
 @media (min-width:320px) and (max-width:480px) {
@@ -1336,10 +1387,54 @@ Steps
 .featured-restaurants .restaurant-listing {
     margin-bottom: 50px;
     margin-top: 25px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    gap: 15px;
+    width: 100%;
 }
 
 .featured-restaurants .single-restaurant {
     margin-bottom: 30px;
+    flex: 0 0 auto !important;
+    width: calc(16.666% - 12px) !important;
+    min-width: 200px !important;
+    max-width: none !important;
+    float: none !important;
+}
+
+.featured-restaurants .single-restaurant .col-md-6,
+.featured-restaurants .single-restaurant [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+@media (max-width: 1200px) {
+    .featured-restaurants .single-restaurant {
+        width: calc(20% - 15px);
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .featured-restaurants .single-restaurant {
+        width: calc(25% - 15px);
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-restaurants .single-restaurant {
+        width: calc(33.333% - 15px);
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .featured-restaurants .single-restaurant {
+        width: calc(50% - 15px);
+        min-width: 140px;
+    }
 }
 
 .add-restaurants {
@@ -1646,8 +1741,6 @@ footer li a {
     line-height: 31px;
     color: #fff;
 }
-
-.profile .right-text {}
 
 .profile-img {
     width: 24.7%;
@@ -2121,9 +2214,6 @@ a[aria-expanded=false] .fa-angle-down {
 * Rstaurants 
 *
 ==============================*/
-.result-show{
-    background-color:;
-}
 
 
 
@@ -2450,7 +2540,6 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .wwone__map-infobox__inner {
-    background: #fff;
     width: 220px;
     position: relative;
     font-size: 14px;

@@ -37,7 +37,7 @@ session_start();
 						if(empty($_SESSION["user_id"])) // if user is not login
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
+							  <li class="nav-item"><a href="registration.php" class="nav-link active btn signup-btn">Signup</a> </li>';
 							}
 						else
 							{
@@ -81,7 +81,8 @@ session_start();
             </div>
             <div class="hero-inner">
                 <div class="container text-center hero-text">
-                    <h1>Order Delivery & Take-Out </h1>
+                    <h1>Truly Homemade, Made with Care</h1>
+                    <h2>Pickles • Food • Candles • Crafts • Cakes • Spices</h2>
 
                     <div class="banner-form">
                         <form class="form-inline">
@@ -207,7 +208,7 @@ session_start();
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="title-block pull-left">
-                            <h4>Featured Shops🏚️</h4> </div>
+                            <h4>Featured Shops</h4> </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="restaurants-filter pull-right">
