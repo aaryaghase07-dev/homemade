@@ -29,18 +29,11 @@ body {
     overflow-x: hidden;
 }
 
-/* body h2, 
-body h3, 
 
-body h5, 
-body h6 {
-    font-family: "Source Sans Pro", sans-serif;
-    color: #25282b;
-} */
 
 
 a {
-    color:#E67E22;
+    color:#0b0602;
 }
 
 a:hover {
@@ -71,11 +64,11 @@ hr {
 * Bootstrap grid tweaks
 *===================================*/
 
-.container {
+ .container {
     max-width: 1270px;
     width: 94%;
     
-}
+} 
 
 
 /* Remove space from columns */
@@ -105,6 +98,7 @@ hr {
     margin-top: 30px;
     margin-bottom: 50px
 }
+
 
 
 /*==================================
@@ -217,9 +211,43 @@ hr {
 }
 
 .signup-btn {
-    background-color: #E67E22;
-    border-color: #E67E22;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    border: none;
     color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-btn:hover {
+    background: linear-gradient(135deg, #e55a2b 0%, #e8850f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.signup-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+}
+
+.signup-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.signup-btn:hover::before {
+    left: 100%;
+
     padding: 8px 16px;
     border-radius: 4px;
     transition: all .3s;
@@ -241,6 +269,7 @@ hr {
 .primary-color {
     color:#E67E22;
 }
+
 
 
 /* ==========================
@@ -382,6 +411,7 @@ hr {
 .navbar {
     background-color:#ffffff;
     color:#333333;
+    
     padding: .95rem 1rem;
     border-radius: 0;
 }
@@ -392,8 +422,9 @@ hr {
 }
 
 .navbar-nav .nav-link {
-    color: #8f560c !important;
+    color: #130c03 !important;
     padding-top: 15px;
+    font-weight: bold;
 }
 
 .navbar-nav .nav-link:hover {
@@ -455,8 +486,9 @@ hr {
     border-radius: 2px;
 }
 .popular h2{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:#E67E22;
+    font-size:40px;
+    color:#100902;
+    font-weight: bolder;
     
 }
 .popular .lead{
@@ -523,7 +555,7 @@ hr {
 ============================*/
 
  .hero {
-    height: 100vh;
+    height: 70vh;
     padding-top: 4%;
     padding-bottom: 4%;
     text-align: center;
@@ -743,10 +775,12 @@ hr {
 .popular {
     padding: 70px 0 90px;
     background-size: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .food-item-wrap {
-    border-radius: 2px;
+    
     overflow: hidden;
     margin-bottom: 30px;
     background: white;
@@ -854,9 +888,9 @@ hr {
 
 .food-item-wrap .figure-wrap {
     position: relative;
+
+
     height: 210px;
-    border-radius: 16px;
-    overflow: hidden;
     background-color: #fff;
 }
 
@@ -908,7 +942,8 @@ hr {
 
 .food-item-wrap .distance {
     background:#ffd953;
-    border-radius: 3px;
+
+    
     color: #fff;
     font-size: 12px;
     padding: 0 10px;
@@ -1240,14 +1275,19 @@ Steps
 /****** featured restaurants block *******/
 
 .restaurants-page{
-    background-color: #ffe9f8;
+    background-color:#f5e6cc57;
+}
+
+/* Increase container width for restaurants page */
+.restaurants-page .container {
+    max-width: 1200px;
 }
 
 
 .featured-restaurants {
     padding: 100px 0 20px;
     position: relative;
-    background-color: #ffffff;
+    background-color: #e7e1ea;
     height: 80vh;
 }
 
@@ -1604,10 +1644,11 @@ App section
 ============================*/
 
 footer {
-    background:tan;
-    padding: 20px 0;
+    background:white;
+    padding: 50px 20px;
     z-index: 1;
     position: relative;
+    
 }
 
 .payment-options ul li {
@@ -1616,7 +1657,7 @@ footer {
 }
 
 footer h5 {
-    color: #fff;
+    color: #110202;
     font-family: "Source Sans Pro", sans-serif;
     margin-bottom: 15px;
     font-weight: bolder;
@@ -1631,7 +1672,7 @@ footer p,
 footer,
 footer span {
     font-weight: 600;
-    color:black;
+    color:rgb(33, 7, 7);
     font-size: 15px;
 }
 
@@ -1696,7 +1737,8 @@ footer li a {
 ============================*/
 
 .inner-page-hero {
-    padding-top: 5%;
+    
+    padding-top: 20%;
     padding-bottom: 5%;
 }
 
@@ -1911,7 +1953,7 @@ footer li a {
 
 .widget-heading {
     padding: 15px;
-    color: #fff;
+    color: #ffffff;
     border-radius: 3px;
     border-bottom: 1px solid #eaebeb;
 }
@@ -1921,12 +1963,14 @@ footer li a {
 }
 
 .widget-heading .widget-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     float: left;
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;
+    color:#000
+
 }
 
 .widget-heading .widget-title .btn {
@@ -2038,7 +2082,7 @@ a.more-link {
 .menu-widget,
 .widget {
     border: 1px solid #eaebeb;
-    background: #fafaf8;
+    background: #fff;
     border-radius: 2px;
     position: relative;
 }
@@ -2217,17 +2261,23 @@ a[aria-expanded=false] .fa-angle-down {
 
 
 
-.restaurant-entry {
-    border: 1px solid #eaebeb;
+ .restaurant-entry {
+    border:1px solid #d0cfcd;
     border-radius: 2px;
     margin-bottom: 20px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    
+} 
 
 .restaurant-entry .entry-logo {
     float: left;
     width: 110px;
     height: auto;
-    border: 1px solid #eaebeb;
+    border: 1px solid #e5ebeb;
     border-radius: 2px;
     margin-top: 15px;
     margin-left: 15px;
@@ -2905,3 +2955,8 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 #aDiv{width: 300px; height: 300px; margin: 0 auto;}
+
+
+
+
+

@@ -25,12 +25,291 @@ else
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-<style type="text/css" rel="stylesheet">
+<style>
+        /* Clean and Modern Your Orders Page Styling */
 
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
 
-.indent-small {
-  margin-left: 5px;
-}
+        .page-wrapper {
+            min-height: 50vh;
+            background: transparent;
+        }
+
+        /* Hero Section */
+        .inner-page-hero {
+            position: relative;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner-page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .inner-page-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Orders Table Container */
+         .bg-gray {
+            padding: 20px 40px;
+            margin: 0px 7px 0px 7px;
+            max-width: 12S00px;
+        } 
+
+        /* Page Title */
+        .result-show h1 {
+            color: #495057;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .result-show h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Table Styling */
+        .table {
+            width: 100%;
+            margin-bottom: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: none;
+        }
+
+        .table thead th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 20px 15px;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table tbody td {
+            padding: 18px 15px;
+            border: none;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 15px;
+            vertical-align: middle;
+            background: white;
+        }
+
+        .table tbody tr:nth-child(even) td {
+            background: #f8f9fa;
+        }
+
+        .table tbody tr:hover td {
+            background: rgba(102, 126, 234, 0.05);
+            transition: background-color 0.3s ease;
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Status Badges */
+        .btn {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: default;
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ffc107, #e0a800);
+            color: #212529;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+        }
+
+        /* Delete Button */
+        .btn-danger.btn-flat {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-danger.btn-flat:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bg-gray {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .result-show h1 {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .table thead th,
+            .table tbody td {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+
+            .inner-page-hero {
+                height: 200px;
+            }
+
+            .btn {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            .col-xs-12.col-sm-7.col-md-7 {
+                display: block;
+            }
+
+            .col-xs-12.col-sm-7.col-md-7 .row {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bg-gray {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .result-show h1 {
+                font-size: 20px;
+            }
+
+            .col-xs-12.col-sm-7.col-md-7 {
+                display: block;
+            }
+
+            .col-xs-12.col-sm-7.col-md-7 .row {
+                display: block;
+            }
+
+            /* Mobile Table Styles */
+            .table, .table thead, .table tbody, .table th, .table td, .table tr {
+                display: block;
+            }
+
+            .table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .table tr {
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+                white-space: normal;
+            }
+
+            .table td:before {
+                content: attr(data-column);
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-weight: bold;
+                color: #495057;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+            }
+
+            .table td:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+        }
+
+        /* Loading Animation Enhancement */
+        .preloader {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
 .form-group.internal {
   margin-bottom: 0;
 }
@@ -40,64 +319,70 @@ else
 .datepicker-dropdown {
   z-index: 200 !important;
 }
- .panel-body {
-  background: #e5e5e5;
-  /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
-  /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* IE10+ */
-  background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
-  font: 600 15px "Open Sans", Arial, sans-serif;
-} 
 label.control-label {
   font-weight: 600;
-  color:black;
+  color: #777;
 }
 
 
+/* Center table container */
+.col-xs-12.col-sm-7.col-md-7 {
+	display: flex;
+	justify-content: center;
+}
+
+.col-xs-12.col-sm-7.col-md-7 .row {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+}
+
 table { 
-	width: 750px; 
+	width: 1000px; 
+	max-width: 100%;
 	border-collapse: collapse; 
-	margin: auto;
-	
+	margin: 0 auto;
+	height: 400px;
+	display: table;
 	}
 
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: white;                          /*     confirm */
-	}
+/* tr:nth-of-type(odd) { 
+	background: #eee; 
+	} */
 
 th { 
-	background-color:#A97142;                      /*confirm*/
+	background: #ff3300; 
 	color: white; 
 	font-weight: bold; 
 	
 	}
 
-td, th { 
-	padding: 10px; 
-	border: 1px solid  white;   /*confirm*/
+ td, th { 
+	padding: 30px; 
+	border: 1px solid #241818; 
 	text-align: left; 
-	font-size: 14px;
+	font-size: 18px;
 	
-	}
+	} 
 
 
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
+	.col-xs-12.col-sm-7.col-md-7 {
+		display: block;
+	}
+
+	.col-xs-12.col-sm-7.col-md-7 .row {
+		display: block;
+	}
+
 	table { 
 	  	width: 100%; 
+	  	margin: 0 auto;
 	}
 
 	
@@ -112,12 +397,12 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 	
-	tr { border: 1px solid white ; }
+	tr { border: 1px solid #ccc; }
 	
 	td { 
 		
 		border: none;
-		border-bottom: 1px solid white ; 
+		border-bottom: 1px solid #eee; 
 		position: relative;
 		padding-left: 50%; 
 	}
@@ -155,10 +440,10 @@ only screen and (max-width: 760px),
       
         <header id="header" class="header-scroll top-header headrom">
   
-            <nav class="navbar navbar-light">
+            <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img src="images/logo/HomeMadeWithCare.png" alt="HomeMadeWithCare Logo" class="img-rounded" style="height: 60px;"></a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-mania-logo.png" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -168,7 +453,7 @@ only screen and (max-width: 760px),
 						if(empty($_SESSION["user_id"]))
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active btn signup-btn">Signup</a> </li>';
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
 							}
 						else
 							{
@@ -190,7 +475,7 @@ only screen and (max-width: 760px),
        
            
     
-            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+            <div class="inner-page-hero bg-image" data-image-src="images/img/are.jpg" width=auto, height=50px>
                 <div class="container"> </div>
         
             </div>
@@ -209,7 +494,7 @@ only screen and (max-width: 760px),
                         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
                           </div>
                         <div class="col-xs-12 col-sm-7 col-md-7 ">
-                            <div class="bg-gray restaurant-entry">
+                            <!-- <div class="bg-gray restaurant-entry"> -->
                                 <div class="row">
 								
 							<table >
@@ -309,54 +594,48 @@ only screen and (max-width: 760px),
                           
                           
                            
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </section>
 
 
             <footer class="footer">
-                    <div class="row bottom-footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                                    <h5>Payment Options</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                        </li>
-                                        <!-- <li>
-                                            <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                        </li> -->
-                                    </ul>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Software Owner</h5>
-                            <p>Miss.Aarya Ghase</p>
-                                    <h5>Address</h5>
-                                    <p>213,Rose Appartment Pezari Road,Pen,Maharashtra, India</p>
-                                    <h5>Phone: +91 9503927264</a></h5> </div>
-                                <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                                    <h5>Addition informations</h5>
-                                   <p>Join more  other Homemade product Shop who benefit from having partnered with us.</p>
-                                </div>
-                            </div>
+            <div class="container">
+                
+          
+                <div class="bottom-footer">
+                    <div class="row">
+                        
+                        <div class="col-xs-12 col-sm-4 address color-black">
+                            <h5>Shop</h5>
+                            <p>pickle,candle</p>
+                            
+                              <p>food,craft</p>
+                              
+                              <p>spices,Cakes</p>
+                              
+                              
                         </div>
-                    </div>
-           
+                               <div class="col-xs-12 col-sm-5 additional-info color-black">     
+                            <h5>HELP</h5>
+                            | <a href="contact.html">Contact Us</a><br><br>
+                             | <a href="faq.html">FAQ</a><br>  <br><br><br><br><br>
+                    
+                               <p>&copy; 2026 Homemade. All rights reserved </p>
                 </div>
-            </footer>
+
+                
+                <a href="term.html" style="margin-bottom:30px">Terms & Conditions</a>      <a href="privacy.html"  style="margin-bottom:30px">|  PrivacyPolicy</a>
+                
+              </div>
+
+              
+            </div>
+            
+            
+        </footer>
         
-        </div>
   
     
     <script src="js/jquery.min.js"></script>

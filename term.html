@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms & Conditions</title>
+  <style>
+    /* Modern Terms & Conditions Page Styling */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Header Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+      padding: 80px 0;
+      text-align: center;
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      padding: 50px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #495057;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #495057;
+      margin: 50px 0 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e9ecef;
+      position: relative;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+
+    p {
+      color: #6c757d;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* List Styling */
+    ul {
+      padding-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      color: #6c757d;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    li::before {
+      content: '▸';
+      position: absolute;
+      left: -20px;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    /* Last Updated */
+    .updated {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #adb5bd;
+      margin-bottom: 40px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border: 1px solid #e9ecef;
+    }
+
+    /* Contact Information */
+    .contact-info {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-info h3 {
+      color: #495057;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      color: #6c757d;
+      margin-bottom: 10px;
+    }
+
+    .contact-info a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 60px 0;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .container {
+        margin: 30px 15px;
+        padding: 30px 25px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin: 35px 0 15px 0;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      .contact-info {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin: 20px 10px;
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .updated {
+        font-size: 0.85rem;
+        padding: 12px;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #5a6fd8, #6a4190);
+    }
+
+    /* Smooth Animations */
+    * {
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Terms & Conditions</h1>
+    <p>Please read our terms carefully before using our services</p>
+  </section>
+
+  <div class="container">
+    <p class="updated">Last Updated: January 2026</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By accessing or using this website, you agree to be bound by these Terms and Conditions.
+      If you do not agree with any part of these terms, please do not use our website.
+    </p>
+
+    <h2>2. Use of Website</h2>
+    <p>
+      You agree to use this website only for lawful purposes and in a way that does not
+      infringe the rights of others or restrict their use of the website.
+    </p>
+
+    <h2>3. User Accounts</h2>
+    <ul>
+      <li>You are responsible for maintaining the confidentiality of your account.</li>
+      <li>You agree to provide accurate and complete information.</li>
+      <li>We reserve the right to suspend or terminate accounts if misuse is detected.</li>
+    </ul>
+
+    <h2>4. Intellectual Property</h2>
+    <p>
+      All content on this website including text, graphics, logos, and code is our property
+      and protected by intellectual property laws.
+    </p>
+
+    <h2>5. Prohibited Activities</h2>
+    <ul>
+      <li>Unauthorized access to the website</li>
+      <li>Uploading harmful or malicious content</li>
+      <li>Attempting to disrupt website security</li>
+    </ul>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>
+      We are not responsible for any damages or losses resulting from the use or inability
+      to use this website.
+    </p>
+
+    <h2>7. Third-Party Links</h2>
+    <p>
+      Our website may contain links to third-party websites. We are not responsible for
+      their content or practices.
+    </p>
+
+    <h2>8. Termination</h2>
+    <p>
+      We reserve the right to terminate or restrict access to our website without notice
+      if these terms are violated.
+    </p>
+
+    <h2>9. Changes to Terms</h2>
+    <p>
+      We may update these Terms & Conditions at any time. Continued use of the website
+      means you accept the updated terms.
+    </p>
+
+    <h2>10. Contact Information</h2>
+    <p>
+      If you have any questions about these Terms & Conditions, please contact us:
+    </p>
+
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p><strong>Email:</strong> <a href="mailto:aaryaghase06@gmail.com">aaryaghase06@gmail.com</a></p>
+      <p><strong>Phone:</strong> +91 9503927264</p>
+      <p><strong>Address:</strong> Shihu, Nagothane, Maharashtra, India</p>
+    </div>
+  </div>
+
+</body>
+</html>

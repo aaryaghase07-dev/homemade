@@ -52,7 +52,7 @@ session_start();
                 </div>
             </nav>
         </header>
-        <div class="page-wrapper">
+        <!-- <div class="page-wrapper">
             <div class="top-links">
                 <div class="container">
                     <ul class="row links">
@@ -62,8 +62,8 @@ session_start();
                         <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="inner-page-hero bg-image" data-image-src="images/img/log.jpg">
+            </div> -->
+            <div class="inner-page-hero bg-image" data-image-src="images/img/wow.jpg">
                 <div class="container"> </div>
             </div>
             <div class="result-show">
@@ -127,44 +127,36 @@ session_start();
        
         <footer class="footer">
             <div class="container">
-                
-              
+
+
+
                 <div class="bottom-footer">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                            <h5>Payment Options</h5>
-                            <ul>
-                                <li>
-                                    <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                </li>
-                                <!-- <li>
-                                    <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                </li> -->
-                            </ul>
+
+                        <div class="col-xs-12 col-sm-4 address color-black">
+                            <h5>Shop</h5>
+                            <p>pickle,candle</p>
+
+                              <p>food,craft</p>
+
+                              <p>spices,Cakes</p>
+
+
+
                         </div>
-                        <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Software Owner</h5>
-                            <p>Miss.Aarya Ghase</p>
-                                    <h5>Address</h5>
-                                    <p>213,Rose Appartment Pezari Road,Pen,Maharashtra, India</p>
-                                    <h5>Phone: +91 9503927264</a></h5> </div>
-                                <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                                    <h5>Addition informations</h5>
-                                   <p>Join more  other Homemade product Shop who benefit from having partnered with us.</p>
-                                </div>
-                    </div>
+                               <div class="col-xs-12 col-sm-5 additional-info color-black">
+                            <h5>HELP</h5>
+                            | <a href="contact.html">Contact Us</a><br><br>
+                             | <a href="faq.html">FAQ</a><br>  <br><br><br><br><br>
+
+                               <p>&copy; 2026 Homemade. All rights reserved </p>
                 </div>
-       
+
+
+                <a href="term.html" style="margin-bottom:30px">Terms & Conditions</a>      <a href="privacy.html"  style="margin-bottom:30px">|  PrivacyPolicy</a>
+              </div>
             </div>
+
         </footer>
         
     <script src="js/jquery.min.js"></script>

@@ -22,7 +22,104 @@ include_once 'product-action.php';
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> </head>
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        h6.mb-1{
+            font-size:2rem;
+        }
+        small.text-muted{
+            font-size:20px;
+        }
+        
+        .sticky-cart {
+            position: sticky;
+            top: 20px;
+        }
+
+        .food-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cart-item:hover .fa-trash {
+            color: #dc3545 !important;
+        }
+
+        .quantity-btn:hover {
+            background-color: #e66305;
+            border-color: #00ff6e;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+
+        .widget-heading {
+            border: none;
+        }
+
+        .menu-widget .collapse {
+            background-color: #fff;
+        }
+
+        /* Cart Container Styling Adjustments */
+        /* Reduce height - compact padding and spacing */
+        .widget-cart .widget-body {
+            padding: 12px 15px !important;
+        }
+
+        .widget-cart .order-row .widget-body {
+            padding: 10px 15px !important;
+        }
+
+        .widget-cart .cart-item {
+            padding-bottom: 10px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .widget-cart .widget-body.bg-light {
+            padding: 12px 15px !important;
+        }
+
+        .widget-cart .widget-heading {
+            padding: 12px 15px !important;
+        }
+
+        .widget-cart .price-wrap {
+            padding: 0;
+        }
+
+        /* Increase width slightly for better balance */
+        @media (min-width: 768px) {
+            .sticky-cart {
+                width: 105%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .sticky-cart {
+                width: 110%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cart {
+                position: static;
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .quantity-controls {
+                 justify-content: center;
+                margin-bottom: 10px; 
+            
+            }
+        }
+    </style> </head>
 
 <body>
     
@@ -32,43 +129,45 @@ include_once 'product-action.php';
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
                     <a class="navbar-brand" href="index.php"> <img src="images/logo/HomeMadeWithCare.png" alt="HomeMadeWithCare Logo" class="img-rounded" style="height: 60px;"></a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
-                       <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Shop <span class="sr-only"></span></a> </li>
-                            
+
+
 							<?php
-						if(empty($_SESSION["user_id"]))
+						if(empty($_SESSION["user_id"])) // if user is not login
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active btn signup-btn">Signup</a> </li>';
 							}
 						else
 							{
+
 									
-									
-										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Your Orders</a> </li>';
+									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Your Orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
 							}
 
 						?>
-							 
+
                         </ul>
+
                     </div>
                 </div>
             </nav>
         </header>
-        <div class="page-wrapper">
+        <!-- <div class="page-wrapper">
             <div class="top-links">
                 <div class="container">
                     <ul class="row links">
                       
-                        <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose Homemade Shops</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick Your favorite food and goods</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose Restaurant</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick Your favorite food</a></li>
                         <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay</a></li>
                         
                     </ul>
                 </div>
-            </div>
+            </div> -->
 			<?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
 									     $rows=mysqli_fetch_array($ress);
 										  
@@ -79,7 +178,7 @@ include_once 'product-action.php';
                         <div class="row">
                             <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
                                 <div class="image-wrap">
-                                    <figure><?php echo '<img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo">'; ?></figure>
+                                    <figure><?php echo '<img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo" >'; ?></figure>
                                 </div>
                             </div>
 							
@@ -102,90 +201,105 @@ include_once 'product-action.php';
             </div>
             <div class="container m-t-30">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                        
-                         <div class="widget widget-cart">
-                                <div class="widget-heading">
-                                    <h3 class="widget-title text-dark">
-                                 Your Cart
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 order-1 order-md-1">
+                        <div class="sticky-cart">
+                         <div class="widget widget-cart shadow-sm border-0">
+                                <div class="widget-heading bg-primary text-white rounded-top">
+                                    <h3 class="widget-title mb-0">
+                                 <i class="fa fa-shopping-cart mr-2"></i>Your Cart
                               </h3>
-							  				  
-							  
+
+
+
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="order-row bg-white">
-                                    <div class="widget-body">
-									
-									
-	<?php
+                                    <div class="widget-body p-3">
+
+
+										<?php if(empty($_SESSION["cart_item"])): ?>
+											<div class="text-center py-4">
+												<i class="fa fa-shopping-cart fa-3x text-muted mb-3"></i>
+												<p class="text-muted">Your cart is empty</p>
+												<small class="text-muted">Add some homemade items from the menu!</small>
+											</div>
+										<?php else: ?>
+
+											<?php
 
 $item_total = 0;
 
-foreach ($_SESSION["cart_item"] as $item)  
+foreach ($_SESSION["cart_item"] as $item)
 {
-?>									
-									
-                                        <div class="title-row">
-										<?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" >
-										<i class="fa fa-trash pull-right"></i></a>
+?>
+
+                                        <div class="cart-item border-bottom pb-2 mb-2">
+											<div class="d-flex justify-content-between align-items-start">
+												<div class="flex-grow-1">
+													<h6 class="mb-1"><?php echo $item["title"]; ?></h6>
+													<small class="text-muted">₹<?php echo $item["price"]; ?> × <?php echo $item["quantity"]; ?></small>
+												</div>
+												<a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>" class="text-danger ml-2" title="Remove item">
+													<i class="fa fa-trash"></i>
+												</a>
+											</div>
+											<div class="text-right mt-1">
+												<strong>₹<?php echo ($item["price"]*$item["quantity"]); ?></strong>
+											</div>
 										</div>
-										
-                                        <div class="form-group row no-gutter">
-                                            <div class="col-xs-8">
-                                                 <input type="text" class="form-control b-r-0" value=<?php echo "₹".$item["price"]; ?> readonly id="exampleSelect1">
-                                                   
-                                            </div>
-                                            <div class="col-xs-4">
-                                               <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input"> </div>
-                                        
-									  </div>
-									  
+
 	<?php
-$item_total += ($item["price"]*$item["quantity"]); 
+$item_total += ($item["price"]*$item["quantity"]);
 }
-?>								  
-									  
-									  
-									  
+?>
+										<?php endif; ?>
+
+
+
+
+
                                     </div>
                                 </div>
-                               
-                         
-                             
-                                <div class="widget-body">
-                                    <div class="price-wrap text-xs-center">
-                                        <p>TOTAL</p>
-                                        <h3 class="value"><strong><?php echo "₹".$item_total; ?></strong></h3>
-                                        <p>Free Delivery!!!</p>
+
+
+
+                                <div class="widget-body bg-light p-3 rounded-bottom">
+                                    <div class="price-wrap text-center">
+                                        <p class="mb-1 text-muted">TOTAL</p>
+                                        <h3 class="value mb-2"><strong class="text-primary"><?php echo "₹".$item_total; ?></strong></h3>
+                                        <p class="text-success mb-3"><i class="fa fa-truck mr-1"></i>Free Delivery!!!</p>
                                         <?php
                                         if($item_total==0){
                                         ?>
 
-                                        
-                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg disabled">Checkout</a>
+
+                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn btn-secondary btn-lg btn-block disabled">Checkout</a>
 
                                         <?php
                                         }
-                                        else{   
+                                        else{
                                         ?>
-                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg active">Checkout</a>
-                                        <?php   
+                                        <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn btn-success btn-lg btn-block"><i class="fa fa-shopping-cart mr-2"></i>Checkout</a>
+                                        <?php
                                         }
                                         ?>
 
                                     </div>
                                 </div>
-								
-						
-								
-								
+
+
+
+
                             </div>
+             
+                        </div>
+
+
+
                     </div>
 
-                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
-                      
-             
-                        <div class="menu-widget" id="2">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 order-2 order-md-2">
+                     <div class="menu-widget" id="2">
                             <div class="widget-heading">
                                 <h3 class="widget-title text-dark">
                               MENU <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2" aria-expanded="true">
@@ -223,10 +337,18 @@ $item_total += ($item["price"]*$item["quantity"]);
                            
                                         </div>
                                
-                                        <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> 
+                                        <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
 										<span class="price pull-left" >₹<?php echo $product['price']; ?></span>
-										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
-										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
+										  <div class="quantity-controls" style="margin-left:30px; display: inline-flex; align-items: center;">
+										    <button type="button" class="btn btn-sm btn-outline-secondary quantity-btn minus-btn" style="padding: 2px 8px; margin-right: 5px;">
+										      <i class="fa fa-minus"></i>
+										    </button>
+										    <input class="form-control quantity-input" type="text" name="quantity" value="1" size="2" readonly style="width: 50px; text-align: center; margin: 0 5px;" />
+										    <button type="button" class="btn btn-sm btn-outline-secondary quantity-btn plus-btn" style="padding: 2px 8px; margin-right: 10px;">
+										      <i class="fa fa-plus"></i>
+										    </button>
+										  </div>
+										  <input type="submit" class="btn theme-btn" value="Add to cart" />
 										</div>
 										</form>
                                     </div>
@@ -251,50 +373,48 @@ $item_total += ($item["price"]*$item["quantity"]);
                     
                 </div>
      
-            </div>
+
+            </div> 
         
-            <footer class="footer">
-                <div class="container">
-           
-                    <div class="row bottom-footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                                    <h5>Payment Options</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                        </li>
-                                        <!-- <li>
-                                            <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                        </li> -->
-                                    </ul>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Software Owner</h5>
-                            <p>Miss.Aarya Ghase</p>
-                                    <h5>Address</h5>
-                                    <p>213,Rose Appartment Pezari Road,Pen,Maharashtra, India</p>
-                                    <h5>Phone: +91 9503927264</a></h5> </div>
-                                <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                                    <h5>Addition informations</h5>
-                                   <p>Join more  other Homemade product Shop who benefit from having partnered with us.</p>
-                                </div>
-                            </div>
+        <footer class="footer">
+            <div class="container">
+
+
+
+                <div class="bottom-footer">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-4 address color-black">
+                            <h5>Shop</h5>
+                            <p>pickle,candle</p>
+
+                              <p>food,craft</p>
+
+                              <p>spices,Cakes</p>
+
+
+
                         </div>
-                    </div>
-       
+                               <div class="col-xs-12 col-sm-5 additional-info color-black">
+                            <h5>HELP</h5>
+                            | <a href="contact.html">Contact Us</a><br><br>
+                             | <a href="faq.html">FAQ</a><br>  <br><br><br><br><br>
+
+                               <p>&copy; 2026 Homemade. All rights reserved </p>
                 </div>
-            </footer>
+
+
+                <a href="term.html" style="margin-bottom:30px">Terms & Conditions</a>      <a href="privacy.html"  style="margin-bottom:30px">|  PrivacyPolicy</a>
+
+              </div>
+
+
+
+            </div>
+
+
+
+        </footer>
       
         </div>
   
@@ -443,6 +563,26 @@ $item_total += ($item["price"]*$item["quantity"]);
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+
+    <!-- Quantity Control Script -->
+    <script>
+        $(document).ready(function() {
+            // Handle quantity increment/decrement
+            $('.quantity-btn').click(function() {
+                var $button = $(this);
+                var $input = $button.closest('.quantity-controls').find('.quantity-input');
+                var currentValue = parseInt($input.val());
+
+                if ($button.hasClass('plus-btn')) {
+                    $input.val(currentValue + 1);
+                } else if ($button.hasClass('minus-btn')) {
+                    if (currentValue > 1) {
+                        $input.val(currentValue - 1);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

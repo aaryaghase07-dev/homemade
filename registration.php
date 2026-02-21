@@ -78,7 +78,246 @@ if(isset($_POST['submit'] ))
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> </head>
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Modern Registration Page Styling */
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            background: transparent;
+        }
+
+        /* Modern Registration Container */
+        .contact-page.inner-page .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Form Header */
+        .contact-page.inner-page h1,
+        .contact-page.inner-page h2 {
+            color: #495057;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .contact-page.inner-page h1::after,
+        .contact-page.inner-page h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Widget Styling */
+        .widget {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        .widget-body {
+            padding: 0;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Form Labels */
+        .form-group label {
+            color: #495057;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Form Controls */
+        .form-control {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #495057;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .form-control::placeholder {
+            color: #adb5bd;
+            font-style: italic;
+        }
+
+        /* Textarea Styling */
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Button Styling */
+        .btn.theme-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn.theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn.theme-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Row Spacing */
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Column Spacing */
+        [class*="col-"] {
+            padding: 0 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-page.inner-page .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .contact-page.inner-page h1,
+            .contact-page.inner-page h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .form-control {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+
+            .btn.theme-btn {
+                padding: 12px 30px;
+                font-size: 15px;
+            }
+
+            [class*="col-"] {
+                padding: 0 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-page.inner-page .container {
+                margin: 10px;
+                padding: 20px 15px;
+            }
+
+            .contact-page.inner-page h1,
+            .contact-page.inner-page h2 {
+                font-size: 24px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-control {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            .btn.theme-btn {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4190);
+        }
+
+        /* Animation */
+        .widget {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style></head>
 <body>
 <div style=" background-image: url('images/img/back2.jpg');">
          <header id="header" class="header-scroll top-header headrom">
@@ -183,48 +422,39 @@ if(isset($_POST['submit'] ))
             </section>
             
       
-            <footer class="footer">
-               <div class="container">
-           
-                  <div class="row bottom-footer">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-xs-12 col-sm-3 payment-options color-gray">
-                              <h5>Payment Options</h5>
-                              <ul>
-                                 <li>
-                                    <a href="#"> <img src="images/paypal.png" alt="Paypal"> </a>
-                                 </li>
-                                 <!-- <li>
-                                    <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                 </li> -->
-                              </ul>
-                           </div>
-                           <div class="col-xs-12 col-sm-4 address color-gray">
-                            <h5>Software Owner</h5>
-                            <p>Miss.Aarya Ghase</p>
-                                    <h5>Address</h5>
-                                    <p>213,Rose Appartment Pezari Road,Pen,Maharashtra, India</p>
-                                    <h5>Phone: +91 9503927264</a></h5> </div>
-                                <div class="col-xs-12 col-sm-5 additional-info color-gray">
-                                    <h5>Addition informations</h5>
-                                   <p>Join more  other Homemade product Shop who benefit from having partnered with us.</p>
-                                </div>
+        <footer class="footer">
+            <div class="container">
+
+
+
+                <div class="bottom-footer">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-4 address color-black">
+                            <h5>Shop</h5>
+                            <p>pickle,candle</p>
+
+                              <p>food,craft</p>
+
+                              <p>spices,Cakes</p>
+
+
+
                         </div>
-                     </div>
-                  </div>
-      
-               </div>
-            </footer>
+                               <div class="col-xs-12 col-sm-5 additional-info color-black">
+                            <h5>HELP</h5>
+                            | <a href="contact.html">Contact Us</a><br><br>
+                             | <a href="faq.html">FAQ</a><br>  <br><br><br><br><br>
+
+                               <p>&copy; 2026 Homemade. All rights reserved </p>
+                </div>
+
+
+                <a href="term.html" style="margin-bottom:30px">Terms & Conditions</a>      <a href="privacy.html"  style="margin-bottom:30px">|  PrivacyPolicy</a>
+              </div>
+            </div>
+
+        </footer>
          
          </div>
        
