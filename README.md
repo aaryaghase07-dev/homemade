@@ -72,4 +72,6 @@ Software : XAMPP
 
 ## Demo
 
-Try the application: https://restaurantshub.000webhostapp.com/
+
+
+Try the application:http://homemade-aarya.42web.io/
